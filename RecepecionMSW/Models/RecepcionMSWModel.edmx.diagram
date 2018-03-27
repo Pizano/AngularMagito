@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd6c03b040c547069c183df895578847" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="RecepcionMSWModel.AspNetRole" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.AspNetUserClaim" Width="1.5" PointX="10.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.AspNetUserLogin" Width="1.5" PointX="10.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.AspNetUser" Width="1.5" PointX="8" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.LLamada_Catalogo" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.Persona" Width="2.125" PointX="0.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.Registro_Llamadas" Width="2" PointX="3.25" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="RecepcionMSWModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RecepcionMSWModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="RecepcionMSWModel.FK__Registro___Id_Lc__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="RecepcionMSWModel.FK__Registro___Id_Pe__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="RecepcionMSWModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.C__MigrationHistory" Width="3.375" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.Atendio_Catalogo" Width="2.375" PointX="0.75" PointY="12" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.Realizo_Recibio_Llamada_Catalogo" Width="3.375" PointX="0.75" PointY="14.5" />
+        <AssociationConnector Association="RecepcionMSWModel.FK__Registro___Id_Ac__74AE54BC" />
+        <AssociationConnector Association="RecepcionMSWModel.FK__Registro___Id_RR__73BA3083" />
+        <EntityTypeShape EntityType="RecepcionMSWModel.Numeros_Serie" Width="1.5" PointX="3" PointY="17.125" />
+        <AssociationConnector Association="RecepcionMSWModel.FK__Numeros_S__Id_Pe__160F4887" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

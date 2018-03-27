@@ -1,0 +1,135 @@
+﻿@model RecepecionMSW.Models.Registro_Llamadas
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<br />
+<br />
+<div class="contenedor">
+    <form>
+        <div>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="../Index" class="left" id="arrow_back"><i class="material-icons">arrow_back</i></a>
+                    <h4 class="brand-logo center">Detalle de Registro de llamada</h4>
+                </div>
+            </nav>
+            <div class="content_container">
+
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Nombre de la persona:
+                        @*@Html.DisplayNameFor(model => model.Persona.Nombre)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.Persona.Nombre)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Estado de la llamada:
+                        @*@Html.DisplayNameFor(model => model.Realizo_Recibio_Llamada_Catalogo.Tipo_Llamada_Estado)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.Realizo_Recibio_Llamada_Catalogo.Tipo_Llamada_Estado)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Origen de la llamada:
+                        @*@Html.DisplayNameFor(model => model.LLamada_Catalogo.Tipo_Llamada)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.LLamada_Catalogo.Tipo_Llamada)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Nombre de la persona que lo registro:
+                        @*@Html.DisplayNameFor(model => model.Usuario)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.Usuario)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Número de serie de Campeón Plus 8:
+                        @*@Html.DisplayNameFor(model => model.NumSerieCampeon)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.NumSerieCampeon)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Número de serie de Campeón Plus Smart:
+                        @*@Html.DisplayNameFor(model => model.NumSerieSmart)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.NumSerieSmart)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        ¿Se atendió la llamada?:
+                        @*@Html.DisplayNameFor(model => model.Atendio_Catalogo.Estado_Llamada)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.Atendio_Catalogo.Estado_Llamada)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Notas:
+                        @*@Html.DisplayNameFor(model => model.Notas)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.Notas)
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+
+                    <div class="input-field col s3">
+                        Fecha:
+                        @*@Html.DisplayNameFor(model => model.Fecha)*@
+                    </div>
+                    <div class="input-field col s9">
+                        @Html.DisplayFor(model => model.Fecha)
+                    </div>
+
+                </div>
+                <hr />
+            </div>
+        </div>
+    </form>
+</div>
+
+@*<p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

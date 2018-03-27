@@ -1,0 +1,136 @@
+﻿@model RecepecionMSW.Models.Persona
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="contenedor">
+        <form>
+            <div>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="../Index" class="left" id="arrow_back"><i class="material-icons">arrow_back</i></a>
+                        <h4 class="brand-logo center">Eliminar Persona</h4>
+                    </div>
+                </nav>
+                <div class="content_container">
+                    <div class="row">
+                        <h5>¿Está seguro que desea eliminar permanentemente esta persona?</h5>
+                    </div>
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            @Html.DisplayNameFor(model => model.Nombre):
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.Nombre)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            @Html.DisplayNameFor(model => model.Empresa):
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.Empresa)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            @Html.DisplayNameFor(model => model.Dependencia):
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.Dependencia)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            Correo electrónico
+                            @*@Html.DisplayNameFor(model => model.Correo):*@
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayTextFor(model => model.Correo)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            Teléfono fijo
+                            @*@Html.DisplayNameFor(model => model.TelefonoFijo):*@
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.TelefonoFijo)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            Lada
+                            @*@Html.DisplayNameFor(model => model.TelefonoFijo):*@
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.LadaFijo)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            Teléfono celular
+                            @*@Html.DisplayNameFor(model => model.TelefonoCelular):*@
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.TelefonoCelular)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-field col s3">
+                            Lada
+                            @*@Html.DisplayNameFor(model => model.TelefonoCelular):*@
+                        </div>
+                        <div class="input-field col s9">
+                            @Html.DisplayFor(model => model.LadaCelular)
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+
+                        <div class="input-fiel col s3 right">
+                            <div>
+                                <button class="btn waves-effect waves-light" id="button-default-down" type="submit" value="Delete">
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+}
+
+
+

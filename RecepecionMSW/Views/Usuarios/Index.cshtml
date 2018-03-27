@@ -1,0 +1,70 @@
+﻿@model IEnumerable<RecepecionMSW.Models.AspNetUser>
+
+<br />
+<br />
+<div class="contenedor">
+    <form>
+        <div>
+            <nav>
+                <div class="nav-wrapper">
+                    <button class="waves-effect waves-light btn right" id="button-default">
+                        @Html.ActionLink("Crear nuevo", "Agregar", null, new { @style = "color:white" })
+                    </button>
+                    <h4 class="brand-logo center">Lista de Usuarios</h4>
+                </div>
+            </nav>
+            <div class="content_container">
+                <table id="mytable" class="bordered highlight" cellspacing="0" width="100">
+                    <thead>
+
+
+                        <tr>
+                            <th>
+                                Usuario
+                                @*@Html.DisplayNameFor(model => model.Usuario)*@
+                            </th>
+
+                            <th>
+                                Correo electrónico
+                                @*@Html.DisplayNameFor(model => model.Correo)*@
+                            </th>
+
+                            <th>
+                                Rol
+                                @*@Html.DisplayNameFor(model => model.Password)*@
+                            </th>
+                            <th></th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayTextFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AspNetRoles.ElementAt(0).Name)
+                            </td>
+                            <td>
+                                @*<td>
+               @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+               @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+               @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+
+                            </td>
+                            
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

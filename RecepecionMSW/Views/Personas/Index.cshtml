@@ -1,0 +1,93 @@
+﻿@model IEnumerable<RecepecionMSW.Models.Persona>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<br />
+<div class="contenedor">
+    <form>
+        <div>
+            <nav>
+                <div class="nav-wrapper">
+                    <button class="waves-effect waves-light btn right" id="button-default">
+                        @Html.ActionLink("Agregar Persona", "Create", null, new { @style = "color:white" })
+                    </button>
+                    <h4 class="brand-logo center">Lista de Personas</h4>
+
+                </div>
+            </nav>
+
+            <div class="content_container">
+                <table id="mytable" class="bordered highlight" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th hidden>
+                                @Html.DisplayNameFor(model => model.Id_Persona)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nombre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Empresa)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Dependencia)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Correo)
+                            </th>
+
+                            <th>
+                                Modificaciones
+                            </th>
+
+                            <th class="hide"></th>
+                            <th class="hide"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+    {
+                        <tr>
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.Id_Persona)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Empresa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Dependencia)
+                            </td>
+                            <td >
+                                @Html.DisplayTextFor(modelItem => item.Correo)
+                            </td>
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.TelefonoCelular)
+                            </td>
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.TelefonoFijo)
+                            </td>
+
+                            <td>
+
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Persona }) |
+                                @Html.ActionLink("Detalles", "Details", new { id = item.Id_Persona }) |
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id_Persona })
+                            </td>
+                        </tr>
+}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+
+

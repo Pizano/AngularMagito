@@ -1,0 +1,173 @@
+﻿@model RecepecionMSW.Models.Registro_Llamadas
+@{
+    ViewBag.Title = "Edit";
+}
+<br />
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="contenedor">
+        <form class="col s12">
+            <div>
+                <nav>
+                    <div class="nav-wrapper">
+                        <a href="../Index" class="left" id="arrow_back"><i class="material-icons">arrow_back</i></a>
+                        <h4 class="brand-logo center">Editar registro de Llamadas</h4>
+                    </div>
+                </nav>
+                <div class="content_container">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id_Rllamadas)
+
+                    <div class="row">
+                        <div class="input-field col s2">
+                            <label>Buscador de Personas</label>
+
+
+                            @Html.TextBoxFor(model => model.Id_Persona, new { @class = "form-control nombre" })
+
+                        </div>
+
+                        <div class="input-field col s4">
+                            @Html.DropDownList("Id_RRLcatalogo",
+(IEnumerable<SelectListItem>)ViewBag.Id_RRLcatalogo)
+
+                            <label> Estado de la llamada.</label>
+                            @*@Html.LabelFor(model => model.Id_RRLcatalogo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.ValidationMessageFor(model => model.Id_RRLcatalogo, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="input-field col s6 ">
+                            <label>Nombre Completo de la persona</label>
+                            @Html.TextBoxFor(model => model.Persona.Nombre, new { @class = "form-control id ", @disabled = "disabled" })
+
+
+                            @*@Html.LabelFor(model => model.Id_Persona , htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @*@Html.EditorFor(model => model.Id_Persona, new { htmlAttributes = new { @class = "form-control nombre" } })*@
+                            @Html.ValidationMessageFor(model => model.Id_Persona, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="input-field col s4">
+
+                            @Html.DropDownList("Id_Lcatalogo",
+      (IEnumerable<SelectListItem>)ViewBag.Id_Lcatalogo)
+
+                            <label>Origen de la Llamada.</label>
+                            @*@Html.LabelFor(model => model.Id_Lcatalogo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.ValidationMessageFor(model => model.Id_Lcatalogo, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="input-field col s8">
+                            <label>Nombre de la persona que atendio la llamada</label>
+                            @*@Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control nombreA " } })
+                            @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-fiel col s6">
+                            @*<select multiple id="paquete">
+                    <option disabled>Selecciona tu Paquete</option>
+                    <option value="cp" id="cp">Campeon Plus</option>
+                    <option value="cs" id="cs">Campeon Smart</option>
+                </select>*@
+
+                            <br />
+                            Campeón Plus 8
+                            <div class="switch" id="cp">
+                                <label>
+                                    Esconder
+                                    <input type="checkbox" id="cp1">
+                                    <span class="lever"></span>
+                                    Mostrar
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-fiel col s6" id="cs">
+                            <br />
+                            Campeón Plus Smart
+                            <div class="switch">
+                                <label>
+                                    Esconder
+                                    <input type="checkbox" id="cs1">
+                                    <span class="lever"></span>
+                                    Mostrar
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6" id="cE">
+                            <label>Número de Serie de Campeón 8</label>
+                            @*@Html.LabelFor(model => model.NumSerieCampeon, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.EditorFor(model => model.NumSerieCampeon, new { htmlAttributes = new { @class = "form-control numcE nums" } })
+
+                            @Html.ValidationMessageFor(model => model.NumSerieCampeon, "", new { @class = "text-danger" })
+
+                        </div>
+
+                        <div class="input-field col s6" id="sE">
+                            <label>Número de Serie de Campeón Smart</label>
+                            @*@Html.LabelFor(model => model.NumSerieSmart, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.EditorFor(model => model.NumSerieSmart, new { htmlAttributes = new { @class = "form-control numsE nums" } })
+                            @Html.ValidationMessageFor(model => model.NumSerieSmart, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+
+                        <div class="input-field col s4">
+
+                            @Html.DropDownList("Id_Acatalogo",
+(IEnumerable<SelectListItem>)ViewBag.Id_Acatalogo)
+                            <label>¿Se Atendió a la persona?</label>
+                            @* @Html.LabelFor(model => model.Id_Acatalogo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.ValidationMessageFor(model => model.Id_Acatalogo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="input-field col s6 area">
+                            <label>Espacio para Notas</label>
+                            @*@Html.LabelFor(model => model.Notas, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.EditorFor(model => model.Notas, new { @maxlength="10",htmlAttributes = new { @class = "form-control notas materialize-textarea" } })
+                            @Html.ValidationMessageFor(model => model.Notas, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-fiel col s3 right">
+                            <div>
+                                <input type="submit" value="Guardar" class="btn btn-default" id="button-default-down" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+}
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

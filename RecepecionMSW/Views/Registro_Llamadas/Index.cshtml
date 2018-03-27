@@ -1,0 +1,133 @@
+﻿
+@model IEnumerable<RecepecionMSW.Models.Registro_Llamadas>
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<div class="contenedor">
+    <form>
+        <div>
+            <nav>
+                <div class="nav-wrapper">
+                    <button class="waves-effect waves-light btn right" id="button-default">
+                        @Html.ActionLink("Agregar Llamada", "Create", null, new { @style = "color:white" })
+                    </button>
+                    <h4 class="brand-logo center">Lista de Llamadas</h4>
+
+                </div>
+
+            </nav>
+            <div class="content_container">
+                <table id="mytable" class="bordered highlight" cellspacing="0" width="100">
+                    <thead>
+
+
+                        <tr>
+                            <th class="hide">
+                                
+                            </th>
+                            <th>
+                                @*@Html.ActionLink(" Nombre de la persona", "Index", new { Sorting_Order = ViewBag.SortingName1 })*@
+                                Nombre de la persona
+                                @*@Html.DisplayNameFor(model => model.Persona.Nombre)*@
+                            </th>
+                            @*<th>
+            Estado de la llamada
+            @Html.DisplayNameFor(model => model.Id_RRLcatalogo)
+        </th>*@
+
+                            <th>
+                                Origen de la llamada
+                                @*@Html.DisplayNameFor(model => model.Id_Lcatalogo)*@
+                            </th>
+
+                            <th>
+                                @*@Html.ActionLink("Nombre de la persona que lo registro", "Index", new { Sorting_Order = ViewBag.SortingName2 })*@
+                                Nombre de la persona que lo registró
+                                @*@Html.DisplayNameFor(model => model.Usuario)*@
+                            </th>
+
+                            <th>
+                                Fecha
+                            </th>
+                            <th>
+                                Modificaciones
+                            </th>
+
+
+
+                            <th class="hide"></th>
+                            <th class="hide"></th>
+                            <th class="hide"></th>
+                            <th class="hide"></th>
+                            <th class="hide"></th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.Id_Rllamadas)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Persona.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LLamada_Catalogo.Tipo_Llamada)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Usuario)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fecha)
+                            </td>
+
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.NumSerieCampeon)
+                            </td>
+
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.NumSerieSmart)
+                            </td>
+
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.Notas)
+                            </td>
+
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.Realizo_Recibio_Llamada_Catalogo.Tipo_Llamada_Estado)
+                            </td>
+
+                            <td class="hide">
+                                @Html.DisplayFor(modelItem => item.Atendio_Catalogo.Estado_Llamada)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Rllamadas })|
+                                @Html.ActionLink("Detalle", "Details", new { id = item.Id_Rllamadas })|
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id_Rllamadas })
+
+                            </td>
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
